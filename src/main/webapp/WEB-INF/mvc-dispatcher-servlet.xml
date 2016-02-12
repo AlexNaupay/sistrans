@@ -44,8 +44,8 @@
 
 
 
-    <!--<mvc:interceptors>
-        &lt;!&ndash;<bean class="com.sistrans.config.AccessInterceptor"/>&ndash;&gt;
+    <mvc:interceptors>
+        <!--<bean class="com.devteam.sistrans.config.AccessInterceptor"/>-->
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/public/**"/>
@@ -53,7 +53,7 @@
             <mvc:exclude-mapping path="/api/**"/>
             <bean class="com.devteam.sistrans.config.AccessInterceptor"/>
         </mvc:interceptor>
-    </mvc:interceptors>-->
+    </mvc:interceptors>
 
 
     <!-- datasource -->
