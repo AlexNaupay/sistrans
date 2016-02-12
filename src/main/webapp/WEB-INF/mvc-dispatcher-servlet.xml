@@ -1,0 +1,71 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- component scan -->
+    <context:component-scan base-package="com.devteam.sistrans"/>
+
+
+    <!-- Usar notaciones para Componentes : Controller-->
+    <mvc:annotation-driven />
+
+
+    <!-- Cómo manejar recursos -->
+    <mvc:resources mapping="/public/**" location="/public/"/>
+    <!--<mvc:default-servlet-handler/> si public es resource -->
+
+
+    <!-- views resolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+    <!-- upload files resolver -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- max upload size in bytes -->
+        <property name="maxUploadSize" value="${file.max.upload.size}" /> <!-- 20MB -->
+        <!-- max size of file in memory (in bytes) -->
+        <property name="maxInMemorySize" value="${file.max.upload.in.memory}" /> <!-- 1MB -->
+
+    </bean>
+
+
+
+    <!--<mvc:interceptors>
+        &lt;!&ndash;<bean class="com.sistrans.config.AccessInterceptor"/>&ndash;&gt;
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/public/**"/>
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/api/**"/>
+            <bean class="com.devteam.sistrans.config.AccessInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>-->
+
+
+    <!-- datasource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> <!-- Singleton default -->
+        <property name="driverClassName" value="${database.driverClassName}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <!-- files config -->
+    <util:properties id="config" location="classpath:config.properties" />
+    <context:property-placeholder properties-ref="config"/>
+
+</beans>

@@ -1,0 +1,30 @@
+##### Database config ... #####
+database.driverClassName=com.mysql.jdbc.Driver
+database.url=jdbc:mysql://localhost/DATABASE
+database.username=USER
+database.password=PASSWORD
+
+##### System config #####
+system.id=sistrans
+
+##### Password config #####
+user.password.max.length=30
+user.password.min.length=8
+
+
+##### File upload config #####
+#max: 500MB
+file.max.upload.size=524288000
+#File upload max in memory 1M=1048576
+file.max.upload.in.memory=2097152
+
+
+##### Decimal Monto config #####
+sistrans.decimals.number=2
+
+
+##### Date and Time format #####
+#Formato válido para lectura, el formato en la base de datos no se cambia
+#Para mas formatos consulte el archivo resources/datetimeformatter
+date.input.format=yyyyMMdd
+hour.input.format=HHmmss

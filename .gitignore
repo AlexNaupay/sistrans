@@ -32,3 +32,5 @@ Servers/
 # package managers
 /**/node_modules
 /**/bower_components
+/**/config.properties
+/**/META-INF/context.xml

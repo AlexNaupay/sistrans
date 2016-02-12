@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context antiJARLocking="true" path="/sistrans-app">
+    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver"
+              maxActive="8" maxIdle="4" name="jdbc/sistransDS"
+              type="javax.sql.DataSource" url="jdbc:mysql://localhost/DATABASE"
+              username="USER"
+              password="PASSWORD"/>
+</Context>
