@@ -1,0 +1,58 @@
+<div class="materialize-date-range">
+    <div class="materialize-date-prev">
+        <input input-date
+               type="text"
+               name="datePrev"
+               id="dateStart"
+               ng-model="selectTimePrev"
+               container="body"
+               format="dd/mm/yyyy"
+               months-full="{{ month }}"
+               months-short="{{ monthShort }}"
+               weekdays-full="{{ weekdaysFull }}"
+               weekdays-short="{{ weekdaysShort }}"
+               weekdays-letter="{{ weekdaysLetter }}"
+               disable="disable"
+               min="{{ minDate }}"
+               max="{{ maxDatePrev }}"
+               today="today"
+               clear="clear"
+               close="close"
+               select-years="8"
+               on-start="onStart()"
+               on-render="onRender()"
+               on-open="onOpen()"
+               on-close="onClose()"
+               on-set="onSet()"
+               on-stop="onStop()" />
+
+    </div>
+
+    <div class="materailize-date-next">
+        <input input-date
+               type="text"
+               name="dateNext"
+               id="dateEnd"
+               ng-model="selectTimeNext"
+               container="body"
+               format="dd/mm/yyyy"
+               months-full="{{ month }}"
+               months-short="{{ monthShort }}"
+               weekdays-full="{{ weekdaysFull }}"
+               weekdays-short="{{ weekdaysShort }}"
+               weekdays-letter="{{ weekdaysLetter }}"
+               disable="disable"
+               min="{{ minDateNext }}"
+               max="{{ maxDateNext }}"
+               today="today"
+               clear="clear"
+               close="close"
+               select-years="8"
+               on-start="onStartNext()"
+               on-render="onRenderNext()"
+               on-open="onOpenNext()"
+               on-close="onCloseNext()"
+               on-set="onSetNext()"
+               on-stop="onStopNext()" />
+    </div>
+</div>

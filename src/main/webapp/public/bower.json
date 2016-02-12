@@ -1,0 +1,33 @@
+{
+  "name": "public",
+  "authors": [
+    "alexh <alexnaupay@gmail.com>"
+  ],
+  "description": "Frontend sistrans",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.1",
+    "angular": "~1.4.7",
+    "ng-file-upload": "~10.0.2",
+    "angular-route": "~1.4.8",
+    "jquery-ui": "~1.11.4",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-sortable": "~0.13.4",
+    "underscore": "~1.8.3",
+    "moment": "~2.10.6",
+    "angular-ui-grid": "~3.0.7"
+  }
+}

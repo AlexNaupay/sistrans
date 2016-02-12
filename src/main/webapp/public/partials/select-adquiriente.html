@@ -1,0 +1,12 @@
+
+<select title="Filtro de Autorizador" class="browser-default" ng-model="selAdq" ng-change="cambioAdq()" ><!--watch--> <!--material-select-->
+    <option value="" selected>Todos los Adquirientes</option>
+    <option ng-repeat="val in valuesAdq" value="{{val.codigo}}">{{val.nombre}}</option>
+
+</select>
+
+
+<div class="chip blue-grey lighten-4" ng-repeat="item in itemsAdq "><!-- track by $index -->
+    {{item.nombre}}
+    <i class="material-icons mdi-navigation-close" ng-click="deleteAdq(item.codigo)"></i>
+</div>
