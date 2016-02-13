@@ -31,4 +31,7 @@ editable desde la aplicación.
 ### Ejecución
 * Crear la BD sistransdb y ejecutar el script sistransdb.sql
 * Importar el proyecto como proyecto maven en (Eclipse, Netbeans o IntelliJ IDEA)
+* Renombrar resource/config.properties.example a resource/config.properties
+    * Poner los datos para la conexión a la base de datos
+    * Cree una base de datos(como lo llamó en *config.properties*) y corra el script de la rama *database*
 * Ejecutar
