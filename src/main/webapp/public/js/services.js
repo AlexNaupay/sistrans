@@ -35,7 +35,7 @@
         };
     }]);
 
-    // Archivo Service
+    // Reporte Service
     services.factory('reporteService', ['$http', '$q', function ($http, $q) {
         function getAutorizadores(){
             var deferred = $q.defer();
@@ -65,34 +65,20 @@
         }
 
         function getReporte1(datos){
-            var deferred = $q.defer();
-            $http({
-                method: 'GET',
-                url: '/api/reporte1',
-                params : datos
-            }).success(function(data){
-                deferred.resolve(data);
-            });
-
-            return deferred.promise;
+            return _getReporte(datos, 'reporte1');
         }
         function getReporte2(datos){
-            var deferred = $q.defer();
-            $http({
-                method: 'GET',
-                url: '/api/reporte2',
-                params : datos
-            }).success(function(data){
-                deferred.resolve(data);
-            });
-
-            return deferred.promise;
+            return _getReporte(datos, 'reporte2');
         }
         function getReporte3(datos){
+            return _getReporte(datos, 'reporte3');
+        }
+
+        function _getReporte(datos, reporte){
             var deferred = $q.defer();
             $http({
                 method: 'GET',
-                url: '/api/reporte3',
+                url: '/api/'+reporte,
                 params : datos
             }).success(function(data){
                 deferred.resolve(data);

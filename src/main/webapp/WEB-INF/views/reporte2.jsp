@@ -19,13 +19,13 @@
     <section>
         <div ng-controller="ReportSecondController">
 
-        <form >
+            <form >
 
-                <materialize-date-range></materialize-date-range>
+                <materialize-date-range date-model="dateRange"></materialize-date-range>
 
                 <div class="row">
                     <div class="input-field col s12 m9">
-                        <select-autorizador></select-autorizador>
+                        <select-and-filter data="selectAutorizador"></select-and-filter>
                     </div>
                     <div class="col s12 m3">
                         <div class="right">
@@ -34,11 +34,11 @@
                     </div>
                 </div>
 
-                <!--<button id="footerButton" class="btn btn-success" ng-click="toggleFooter()">Toggle Grid Footer</button>
-                <button class="btn btn-success" ng-click="toggleColumnFooter()">Toggle Column Footer</button>-->
-            <div><strong class="light-blue-text">{{message_front}}</strong></div>
-                <div id="grid1" ui-grid="gridOptions" class="grid"></div>
-        </form>
+                    <!--<button id="footerButton" class="btn btn-success" ng-click="toggleFooter()">Toggle Grid Footer</button>
+                    <button class="btn btn-success" ng-click="toggleColumnFooter()">Toggle Column Footer</button>-->
+                <div><strong class="light-blue-text">{{message_front}}</strong></div>
+            </form>
+            <div id="grid1" ui-grid="gridOptions" class="grid"></div>
         </div>
 
     </section>
