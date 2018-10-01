@@ -69,7 +69,7 @@
                 $timeout(function () {
                     file.progress = 0;
                     //file.result = response.data;
-                    $("#modal-upload-result").openModal();
+                    $("#modal-upload-result").modal().modal('open');
                 });
             }, function (response) {
                 console.info("Mal",response);
@@ -101,7 +101,7 @@
             $scope.editItem = _.findWhere($scope.campos,{codigo:id});
             $scope.tamanoedit = $scope.editItem.longitud;
             $scope.nombreedit = $scope.editItem.nombre;
-            $('#modal-edit').openModal();
+            $('#modal-edit').modal().modal('open');
         };
 
         $scope.cambiar = function(){
@@ -109,7 +109,7 @@
             $scope.editItem.nombre = $scope.nombreedit;
             $scope.cambios = true;
             console.info("Click en cambiar");
-            $('#modal-edit').closeModal();
+            $('#modal-edit').modal().modal('close');
         };
 
         $scope.guardar=function(){
